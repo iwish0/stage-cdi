@@ -1,0 +1,31 @@
+<div class="container-fuild">
+	<div class="row well text-center">
+		<div><span class="glyphicon glyphicon-info-sign"></span> Vous devez vous authentifier pour accéder aux ressouces de cette application.</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-offset-4 col-sm-4 well" id="mainLoginFormWrapper">
+			<form id="mainLoginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+				<div class="bg-primary">
+				<div class="circle-icon-lg">
+					<span class="glyphicon glyphicon-lock"></span>
+				</div>
+			</div>
+			  <div class="form-group">
+			   <!--  <label for="authid">Votre identifiant</label> -->
+			    <input type="text" class="form-control input-lg" id="authid" placeholder="Identifiant" name="authid" [ngModel]="webstorage.authid" #authid="ngModel">
+			  </div>
+			  <div class="form-group">
+			    <!-- <label for="exampleInputPassword1">Votre mot de passe</label> -->
+			    <input type="password" class="form-control input-lg" id="password" placeholder="Mot de passe" name="password" [ngModel]="webstorage.password" #password="ngModel">
+			  </div>
+			  <div class="checkbox">
+			    <label>
+			      <input type="checkbox" name="rememberMe" [ngModel]="webstorage.rememberMe"> Conserver la connexion
+			    </label>
+			  </div>
+			  <button type="submit" class="btn btn-default btn-lg">Connexion</button>
+			  <p id="forgetPasswordLink"><a href="">Mot de passe oublié?</a></p>
+			</form>
+		</div>
+	</div>
+</div>
